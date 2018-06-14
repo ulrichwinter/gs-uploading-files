@@ -3,7 +3,9 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.2.RELEASE")
+//        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.4.RELEASE")  // no error
+//        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.12.RELEASE") // error in this demo not reproduced - but in other project
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.2.RELEASE")  // error occurs
     }
 }
 
@@ -27,6 +29,7 @@ targetCompatibility = 1.8
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile group: 'commons-fileupload', name: 'commons-fileupload', version: '1.3.3'
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
